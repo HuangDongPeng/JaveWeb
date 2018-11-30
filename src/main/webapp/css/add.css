@@ -1,0 +1,20 @@
+body{
+	background-image: url(../img/add.jpg);
+}
+#main{
+	margin-left: 30%;
+	margin-top:15%;
+	width: 800px;
+	height: 500px;
+	border: solid 2px gainsboro;
+	background-color: coral;
+}
+#input{
+	font-family: "arial, helvetica, sans-serif";
+	margin-left: 20%;
+	margin-top: 20%;
+}
+#btn{
+	margin-left: 20%;
+	margin-top: 10%;
+}

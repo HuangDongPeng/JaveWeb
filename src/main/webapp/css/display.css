@@ -1,0 +1,49 @@
+table{
+	margin-left: 15%;
+	
+	text-align: right;
+	font-family: "arial rounded mt bold";
+	
+}
+#table{
+	margin-left: 25%;
+	margin-top: 13%;
+	width: 700px;
+	height: 500px;
+	background-color: darkseagreen;
+	border: 2px solid black;
+	border-radius: 20px;
+}
+th{
+	height: 60px;
+	padding-left: 80px;
+}
+td{
+	height: 40px;
+	
+}
+table tr:nth-child(odd) td  {
+    background-color:gray;
+
+}
+table tr:nth-child(even) td  {
+    background-color:cornflowerblue;
+
+}
+table tr th{
+	color: black;
+	font-size: medium;
+}
+body{
+	background-image: url(../img/table.jpg);
+}
+.title{
+	margin-left: 30%;
+	padding-top: 5%;
+	font-family: "微软雅黑";
+}
+table tr td a{
+	padding-left: 20px;
+	text-decoration: none;
+	color: #000000;
+}

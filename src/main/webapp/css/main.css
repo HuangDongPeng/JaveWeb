@@ -1,0 +1,72 @@
+#background{
+	z-index: -1;
+	position: fixed;
+	filter: blur(10px);
+	-webkit-animation:myfirst 40s;
+}
+#window{
+	z-index: 1;
+	width: 800px;
+	height: 500px;
+	border-radius: 10px;
+	border: solid 2px lightslategray;
+	position: fixed;
+	top: 20%;
+	left: 30%;
+	background-color: cornsilk;
+	
+	
+}
+@-webkit-keyframes myfirst 
+{
+    from {top: 0px;}
+    to {top: -3000px;}
+}
+
+.title{
+	font-family: "微软雅黑";
+	padding-left: 30%;
+	padding-top: 7%;
+}
+#type{
+	font-family: "arial, helvetica, sans-serif";
+	padding-left: 30%;
+	padding-top: 5%;
+}
+.logo{
+	float: right;
+	margin-right: 50px;
+}
+#login{
+	padding-top: 5%;
+	padding-left: 20%;
+	font-size: 80%;
+}
+.input{
+	font-size: 120%;
+	width: 200px;
+	height: 28px;
+	border-radius: 4px;
+	padding-left: 10px;
+}
+#btn{
+	padding-top: 20px;
+}
+.btn{
+	margin-left: 8%;
+	width: 100px;
+	height: 30px;
+	background-color: cornflowerblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+

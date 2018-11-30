@@ -1,0 +1,59 @@
+body{
+	background-image: url(../img/rest.jpg);
+}
+#window{
+	width: 700px;
+	height: 500px;
+	margin-left: 30%;
+	margin-top: 15%;
+	border: 2px solid darkolivegreen;
+	background-color: cornsilk;
+	border-radius:  20px;
+	font-family: "arial rounded mt bold";
+}
+.title{
+	padding-left: 30%;
+	padding-top: 5%;
+	color: darkseagreen;
+	font-size: 200%;
+}
+#input1{
+	padding-left: 16%;
+	padding-top: 6%;
+	font-size: 100%;
+}
+#input2{
+	padding-left: 16%;
+	padding-top: 4%;
+	font-size: 100%;
+}
+.text{
+	width: 200px;
+	height: 30px;
+	border-radius: 4px;
+}
+#aaa{
+	
+	text-decoration: none;
+	color: cornflowerblue;
+	font-size: small;
+	padding-left: 60%;
+	padding-top: 3%;
+	
+}
+.aaa{
+	text-decoration: none;
+	color: cornflowerblue;
+}
+#btn{
+	padding-left: 20%;
+}
+#btn1,#btn2{
+
+	width: 100px;
+	height: 30px;
+	background-color: cornflowerblue;
+}
+#btn2{
+	margin-left: 3%;
+}
