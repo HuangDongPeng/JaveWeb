@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<form action="/studentUpdateDetail}"  method="post">
+<form action="/studentUpdateDetail"  method="post">
     <%
         String studentName=request.getParameter("studentName");
         String studentID=request.getParameter("studentID");

@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 @Controller
 public class StudentController  {
@@ -64,21 +65,25 @@ public class StudentController  {
 
         String sql=String.format("insert into students values('%s','%s')",studentName,studentID);
         jdbcTemplate.update(sql);
-        return "Search";
-    }
-
-    @RequestMapping(value = "/studentDelete",method = {RequestMethod.POST,RequestMethod.GET})
-    public String DeleleStudent(HttpServletRequest request,HttpServletResponse response){
-        String key = request.getParameter("name");
-        String sql=String.format("delete from students where ID='%s'",key);
-        jdbcTemplate.update(sql);
+        try{
+            response.sendRedirect("Delete.jsp?operationType=add");
+        }catch (Exception e){}
         return "Delete";
     }
 
+    @RequestMapping(value = "/studentDelete/{ID}",method = {RequestMethod.POST,RequestMethod.GET})
+    public String DeleleStudent(@PathVariable("ID") String key,HttpServletRequest request,HttpServletResponse response){
+        try{
+            String sql=String.format("delete from students where ID='%s'",key);
+            jdbcTemplate.update(sql);
+            response.sendRedirect("../Delete.jsp?operationType=delete");
+        }catch (Exception e){}
+        return "Delete";
+    }
 
     //获取选择的学生信息，并传输到更新页面
-    @RequestMapping(value = "/studentUpdate/{name}",method = {RequestMethod.POST,RequestMethod.GET})
-    public String UpdateStudent(@PathVariable("name") String key,HttpServletResponse response)
+    @RequestMapping(value = "/studentUpdate/{ID}",method = {RequestMethod.POST,RequestMethod.GET})
+    public String UpdateStudent(@PathVariable("ID") String key,HttpServletResponse response)
     {
         String studentID = key;
         System.out.println("update ID: "+studentID);
@@ -105,15 +110,40 @@ public class StudentController  {
     }
 
     //更改信息页面点击提交后的响应
-    @RequestMapping(value = "/studentUpdateDetail}",method = {RequestMethod.POST,RequestMethod.GET})
-    public String UpdateStudentDetail(HttpServletRequest request)
+    @RequestMapping(value = "/studentUpdateDetail",method = {RequestMethod.POST,RequestMethod.GET})
+    public String UpdateStudentDetail(HttpServletRequest request,HttpServletResponse response)
     {
-        String studentName=request.getParameter("studentName");
-        String studentID=request.getParameter("studentID");
-        System.out.println("更新后的名字: "+studentName);
-        String sql=String.format("update students set name='%s' where ID='%s'",studentName,studentID);
-        jdbcTemplate.update(sql);
-        return "Search";
+        try{
+            String studentName=request.getParameter("studentName");
+            String studentID=request.getParameter("studentID");
+            System.out.println("更新后的名字: "+studentName);
+            String sql=String.format("update students set name='%s' where ID='%s'",studentName,studentID);
+            jdbcTemplate.update(sql);
+            response.sendRedirect("Delete.jsp?operationType=update");
+
+        }
+        catch (Exception e){}
+        return "Delete";
+    }
+
+    //获取多条数据
+    @RequestMapping("/test")
+    public String SearchStudents(){
+        String sql=String.format("select * from students");
+        List<Student> studentList = jdbcTemplate.query(sql, new RowMapper<Student>() {
+            @Override
+            public Student mapRow(ResultSet resultSet, int i) throws SQLException {
+                Student student = new Student();
+                student.name = resultSet.getString("name");
+                student.ID = resultSet.getString("ID");
+                return student;
+            }
+        });
+
+        for (int i = 0; i < studentList.size(); i++) {
+             Student.studentArrayList.add(studentList.get(i));
+        }
+        return "SearchResult";
     }
 
 

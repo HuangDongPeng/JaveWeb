@@ -1,4 +1,3 @@
-<%@page import="userpackage.UserDA,userpackage.User" %>
 <%@ page language="java" pageEncoding="UTF-8" %>
 <html>
   <head>
@@ -6,9 +5,20 @@
   </head>
   <body>
    <script>
-     alert("删除成功");
-     window.location.href="Search.jsp";
-   </script>
+       var operationType = '<%=request.getParameter("operationType")%>';
+           if(operationType==='delete')
+           {
+               alert("删除成功");
+           }
+           else if(operationType==='add'){
+               alert("添加成功");
+           }
+           else if(operationType==='update')
+           {
+               alert("修改成功");
+           }
+       window.location.href="../Search.jsp";
 
+   </script>
   </body>
 </html>

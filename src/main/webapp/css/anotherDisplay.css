@@ -20,7 +20,7 @@
 body{
 	
 	font-family:Microsoft YaHei,Segoe UI,Tahoma,Arial,Verdana,sans-serif;
-	color: white;
+	color: black;
 	
 }
 #img{
@@ -49,13 +49,13 @@ body{
 }
 .title{
 	padding-left: 100px;
-	color: white;
+	color: black;
 }
 table{
 margin-left:60px;
 margin-top:0px;
 text-align: right;
-color: white;
+color: black;
 
 }
 table tr{
@@ -67,7 +67,7 @@ table tr td{
 table tr td a{
 	text-decoration: none;
 	font-size: 100%;
-	color: white;
+	color: black;
 }
 .container{
 	margin-left: 500px;
