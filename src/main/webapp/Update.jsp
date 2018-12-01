@@ -33,8 +33,8 @@
             </div>
         </div>
         <div id="btn">
-            <input class="btn" type="submit" value="更新" />
-            <input class="btn" type="submit" onclick=window.location.href='Search.jsp' value="返回" />
+            <input class="btn" type="submit" value="更新"/>
+            <input class="btn" onclick=window.location.href='Search.jsp' value="返回" />
         </div>
     </div>
 </form>

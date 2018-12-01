@@ -17,17 +17,17 @@
 			<th>学号</th>
 		</tr>
 		<%
+
             for(Student tl:Student.studentArrayList)
             {%>
            <tr>
                <td><%=tl.name %></td>
                <td><%=tl.ID %></td>
 			   <div id="btn">
-				   <td>
-					   <form action="/studentUpdate/<%=tl.ID%>" >
-						   <button  type="submit">修改</button>
-					   </form>
-				   </td>
+                   <td>
+                      <a class="button" onclick=window.location.href='Update.jsp?studentName=<%=tl.name%>&studentID=<%=tl.ID%>'>修改</a>
+                   </td>
+
 				   <td>
 					   <form action="/studentDelete/<%=tl.ID%>">
 						   <button  type="submit">删除</button>
